@@ -22,7 +22,6 @@ bot.add_cog(Admin(bot))
 bot.add_cog(ConfigGame(bot))
 bot.add_cog(Poll(bot))
 
-
 @bot.event
 async def on_ready():
     print("READY")
