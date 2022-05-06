@@ -151,11 +151,13 @@ class HostGame(commands.Cog):
         # Start Game Window
         pyautogui.click(510, 470)
         # Multiplayer Options Window
+        time.sleep(0.5)
         pyautogui.click(540, 475)
         time.sleep(1.5)
         pyautogui.screenshot('pictures\\screenshots\\lobby.png', region=(0, 0, 640, 500))
      
         # Enter Game
+        time.sleep(0.5)
         pyautogui.click(420, 480)
         time.sleep(0.5)
         keyboard.send('t')
