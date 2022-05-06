@@ -153,7 +153,7 @@ class HostGame(commands.Cog):
         # Multiplayer Options Window
         time.sleep(0.5)
         pyautogui.click(540, 475)
-        time.sleep(1.5)
+        time.sleep(2.5)
         pyautogui.screenshot('pictures\\screenshots\\lobby.png', region=(0, 0, 640, 500))
      
         # Enter Game
@@ -196,7 +196,7 @@ class HostGame(commands.Cog):
     #-At lobby menu : Take screenshot, upload to discord, then enter the game
     #-Set bot status to hosting
     #-Set registry values back to defaults
-    @commands.guild_only()
+    # @commands.guild_only()
     @commands.command(name="host", brief="Host an Outlaws match")
     async def host(self, ctx, *args):
         # Confirm that game isn't already running
