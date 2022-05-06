@@ -8,19 +8,17 @@ TODO: Add additional functionality, like findmap / etc.
 from discord import Status
 from discord.ext import commands
 from cogs.hostgame import HostGame
-from cogs.admin import Admin
 from cogs.gameconfig import ConfigGame
-from cogs.poll import Poll
 import game.status as bot_status
+import constants
+import embeddable.embeds
 
-bot = commands.Bot(command_prefix="!")
+bot = commands.Bot(command_prefix=f"{constants.CMD_PREFIX}")
 
-TOKEN = ""  # Enter Discord Bot token here
+TOKEN = ''
 
 bot.add_cog(HostGame(bot))
-bot.add_cog(Admin(bot))
 bot.add_cog(ConfigGame(bot))
-bot.add_cog(Poll(bot))
 
 @bot.event
 async def on_ready():
@@ -28,5 +26,11 @@ async def on_ready():
     await bot_status.update(self=bot,
                             name="Outlaws",
                             status=Status.online)
+
+@bot.event
+async def on_command_error(error, ctx):
+    if isinstance(error, commands.CommandNotFound):
+        await bot.send_message(ctx.message(embed=embeddable.embeds.error("Unknown command")))
+
 
 bot.run(TOKEN)
