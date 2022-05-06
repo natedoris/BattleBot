@@ -6,6 +6,24 @@ config = {
     "maximum-players": 16
 }
 
+# Game URL to join
+GAME_URL = {
+    "dplay" : "outlaws.redirectme.net",
+    "wsock" : "172.22.144.119"
+}
+
+
+# Multiplayer Network Connection
+GAME_CONN = {
+    "wsock": "lecwsock.dll",
+    "dplay": "lecdp3.dll"
+}
+
+GAME_CONN_CONV = {
+    "wsock" : "Winsock",
+    "dplay" : "DirectPlay"
+}
+
 # Game mode default config D for Deathmatch
 multiplayer_game_mode = "D"
 

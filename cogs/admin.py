@@ -1,8 +1,8 @@
+# Deprecating the administration functionality. Not necessary at this time
+
 import discord
 from discord.ext import commands
-from db.auth import DataBase
 import embeddable.embeds
-
 
 class Admin(commands.Cog):
     _access_denied = "Access Denied - Please talk to an admin for access \n" \

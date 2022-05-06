@@ -1,7 +1,7 @@
 import discord
 
 
-# Update status
+# Command to update the bot's status when game is initiated and destroyed
 async def update(self, name, status):
     activity = discord.Activity()
     activity.type = discord.ActivityType.playing
